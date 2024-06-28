@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+    <title>Entry_table</title>
+</head>
+<body>
+    <div class="container">
+         <h2 style="margin-left:20% ;margin-top:2%;">Custom Table</h2>
+        <div class="first">
+            <h3 style="margin-bottom: 13px; margin-left: 15px;">Add item </h3>
+            <div class="row1">
+             <input type="text" class="input-btn" id="input-btn-name" placeholder="Enter Name" required>
+             <input type="text" class="input-btn" id="input-btn-category" placeholder="Enter Category" required>
+             <input type="number" class="input-btn" id="input-btn-year" placeholder="Enter Year" required>
+             <button id="add-btn" onclick="addItem()">Add item</button>
+            <p id="demo"></p>
+            </div>
+        </div>
+        <h4 style="margin-bottom: 1%;">Search for Item</h4>
+       
+            <input type="text" id="search-btn" placeholder="Search for names.." required>
+       
+           
+               <div class="table">
+                 <table>
+                   <thead>
+                    <tr>
+                        <th>S.no</th>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Year</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                        
+                    </tr></thead>
+                    <tbody class="tableItems">
+                        
+                    </tbody>
+                </table>
+               </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
