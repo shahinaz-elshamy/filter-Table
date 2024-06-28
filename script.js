@@ -6,14 +6,14 @@ function addItem(){
     let category=document.getElementById("input-btn-category").value;
     let year=document.getElementById("input-btn-year").value;
 
- if(name==='' || category==='' || year==='' || category===undefined || year<1990 || year >2024 ){
-    document.getElementById("demo").innerHTML="please fill all fields";
+ if(name==='' || category==='' || year==='' || category===undefined || year<1900 || year >2024 ){
+    document.getElementById("demo").innerHTML="please fill all fields with correct input";
 
  }else{
     document.getElementById("demo").innerHTML='';
     let row=document.createElement("tr");
    
-    /*or insertRow()*/
+    /*or insertRow() =>not working due to undex*/
     let cellno=document.createElement("td");
     let cellName=document.createElement("td");
     let cellCategory=document.createElement("td");
@@ -66,9 +66,7 @@ updateCellNo();
       let row=e.target.closest("tr"); 
       let rowNo=row.rowIndex;
       row.remove();
-      for(let i=rowNo; i<tableItems.rows.length;i++){
-        tableItems.rows[i].cells[0].textcontent=i+1;
-      }
+     updateCellNo();
        saveData();
     }
 });
@@ -87,7 +85,7 @@ document.getElementById("search-btn").addEventListener("input",function(){
 });});
 
 function updateCellNo() {
-    let rows = tableItems.rows;
+    let rows=document.getElementsByClassName("tableItems")[0].rows;
     for(let i=0;i<rows.length;i++){
     rows[i].cells[0].textContent=i+1;
     }
